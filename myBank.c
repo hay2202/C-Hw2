@@ -1,23 +1,44 @@
 #include "myBank.h"
 #include <stdio.h>
 
-double arr[50][2] bank = {0};
-int accountCounter=0;	//count the actives account
+//double arr[2][50] bank = {0};
+//int accountCounter=0;	//count the actives account
+//
+////open account
+//int O (double amount){
+//	if(accountCounter <50){
+//		int i=accountCounter;
+//		arr[0][i]= i+901;
+//		arr[1][i]= amount;
+//		printf("Welcome! your account number is: %d",(i+901));
+//	else{
+//		printf("This bank is full!");
+//	}
+//	return 1;
+//}
 
-//open account 
-void O (double amount){
-	if(accountCounter <50){
-		int i=accountCounter;
-		arr[i][0]= 1;	// if account is active ,1=on , 0=off;
-		arr[i][1]= amount;
-		printf("Welcome! your account number is: %d .\n",(i+901));
-		accountNumber++;
-	else{
-		printf("This bank is full! \n");
-	}
+////----------------open account---------------------
+
+void O ()
+{
+    if (accountCounter<50)
+    {
+        if(arr[accountCounter]==0) { // not null
+            printf("Enter the amount of money you want to deposit");
+            scanf(" %lf ",amount);
+            arr[accountCounter][0] = 1; // if account is active ,1=on , 0=off;
+            arr[accountCounter][1] = amount;// amount of money
+            printf("Welcome! your account number is: %d . \n", (accountCounter + 901));
+            accountCounter++;
+        }
+    }
+    else
+    {
+        printf("This bank is full! \n");
+    }
+
 }
 
-//check amount
 void B (int account)
 {
     // this is how you access an account because the account number is starting
@@ -40,10 +61,11 @@ void B (int account)
     }
 }
 
-//deposit
-void D(int account, double amount){
+void D(int account){
     if(arr[account-901]!=0) {
         if (arr[account-901][0] == 1) {
+            printf("Enter the amount of money you want to deposit");
+            scanf(" %lf ",amount);
             arr[account-901][1]= arr[account-901][1] + amount;
             printf("The new balance after deposit : %d . \n", arr[account-901][1]);
         }
@@ -59,11 +81,12 @@ void D(int account, double amount){
     }
 }
 
-//withdraw
-void W (int account, double amount)
+void W (int account)
 {
     if(arr[account-901]!=0) {
         if (arr[account - 901][0] == 1){
+            printf("Enter the amount of money you want to withdraw");
+            scanf(" %lf ",amount);
             if (arr[account-901][1]-amount>=0 ){ // if the balance >=0
                 arr[account-901][1]=arr[account-901][1]-amount;
                 printf("The balance after pull : %d",arr[account-901][1]);
@@ -84,7 +107,6 @@ void W (int account, double amount)
     }
 }
 
-//close account
 void C (int account)
 {
     if(arr[account-901]!=0)
@@ -104,15 +126,17 @@ void C (int account)
     }
 }
 
-//insert rate
-void I (double rate)
+void I ()
 {
     int i=0;
+    double rate=0;
     // run on all the account
     while (i<accountCounter)
     {
         if(arr[i][0]==1) // if the account is active
         {
+            printf("Enter the amount of money you want to rate");
+            scanf(" %lf ",rate);
             arr[i][1]=((arr[i][1]*rate)/100)+arr[i][1]; // add the rate to amount of account
             i++;
         }
@@ -122,7 +146,6 @@ void I (double rate)
     }
 }
 
-//print all actives account
 void P()
 {
     int i=0;
@@ -141,8 +164,7 @@ void P()
     }
 }
 
-//close & exit
-void E()
+int E()
 {
     int i=0;
     while (i<accountCounter)
@@ -157,7 +179,9 @@ void E()
             i++;
         }
     }
+    return 1;
 }
+
 
 
 
