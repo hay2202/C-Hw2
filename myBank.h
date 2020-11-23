@@ -1,9 +1,9 @@
-int O (double amount);
-int B (int account);
-int D (int account, double amount);
-int W (int account, double amount);
-int C (int account);
-int I (double rate);
-int P ();
-int E ();
+void O ();
+void B (int account);
+void D (int account);
+void W (int account);
+void C ();
+void I ();
+void P ();
+void E ();
 
