@@ -1,7 +1,7 @@
 #include "myBank.h"
 #include <stdio.h>
 
-double [50][2] arr = {0};
+double arr [50][2] = {0};
 int accountCounter=0;	//count the actives account
 double amount;
 
