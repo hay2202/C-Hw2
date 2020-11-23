@@ -7,9 +7,10 @@ char type = ' ';
 bool flag = true;
 int account=0;
 
+printf("Welcome to our bank! Please tap Transaction type. \n");
+scanf("%c",&type);
+
 while(flag){
-	printf("Welcome to our bank! Please tap Transaction type. \n");
-	scanf("%c",&type);
 	switch(type)
 	{
 		case 'O':
@@ -49,6 +50,8 @@ while(flag){
 			flag=false;
                         break;
 		}
+	printf("Welcome to our bank! Please tap Transaction type. \n");
+        scanf("%c",&type);
 	}
 return 0;
 }		
