@@ -5,6 +5,7 @@ double arr [50][2] = {0};
 int accountCounter=0;	//count the actives account
 double amount=0;
 
+////////////
 
 ////----------------open account---------------------
 
