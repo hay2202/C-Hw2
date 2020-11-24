@@ -9,54 +9,59 @@ int account=0;
 
 printf("Welcome to our bank! Please tap Transaction type. \n");
 scanf(" %c",&type);
+    while (flag== true) {
+        if(type >= 'A' && type <= 'Z') {
+            switch (type) {
+                case 'O':
+                    O();
+                    break;
+                case 'B':
+                    printf("insert account number: ");
+                    scanf("%d", &account);
+                    B(account);
+                    break;
+                case 'D':
+                    printf("insert account number: ");
+                    scanf("%d", &account);
+                    D(account);
+                    break;
 
-while(flag){
+                case 'W':
+                    printf("insert account number: ");
+                    scanf("%d", &account);
+                    W(account);
+                    break;
+                case 'C':
+                    printf("insert account number: ");
+                    scanf("%d", &account);
+                    C(account);
+                    break;
 
-	switch(type)
-	{
-		case 'O':
-			O();
-			break;
-		case 'B':
-                        printf("insert account number: ");
-                        scanf("%d", &account);
-                        B(account);
-                        break;
-		case 'D':
-                        printf("insert account number: ");
-                        scanf("%d", &account);
-                        D(account);
-                        break;
+                case 'I':
+                    I();
+                    break;
 
-		case 'W':
-                        printf("insert account number: ");
-                        scanf("%d", &account);
-                        W(account);
-                        break;
-		case 'C':
-			printf("insert account number: ");
-                        scanf("%d", &account);
-                        C(account );
-                        break;
+                case 'P':
+                    P();
+                    break;
+                case 'E':
+                    E();
+                    printf("The program is over .\n");
+                    flag = false;
+                    break;
+            }
+            if (flag != false) {
+                printf("Please tap Transaction type: \n");
+                scanf(" %c", &type);
+            }
+        }
+        else {
+            printf("close \n");
+            printf("Please tap Transaction type: \n");
+            scanf(" %c", &type);
+        }
+    }
 
-	       	case 'I':
-                        I();
-                        break;
-
-		case 'P':
-                        P();
-                        break;
-		case 'E':
-                        E();
-                        printf("The program is over .\n");
-			            flag=false;
-                        break;
-		}
-		if(flag != false){
-	   	 printf("Please tap Transaction type: \n");
-     	  	 scanf(" %c",&type);
-		}
-	}
 return 0;
 }
 
