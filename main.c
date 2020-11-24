@@ -8,7 +8,7 @@ bool flag = true;
 int account=0;
 
 printf("Welcome to our bank! Please tap Transaction type. \n");
-scanf("%c",&type);
+scanf(" %c",&type);
 
 while(flag){
 
@@ -53,8 +53,8 @@ while(flag){
                         break;
 		}
 		if(flag != false){
-	    printf("Please tap Transaction type: \n");
-        scanf(" %c",&type);
+	   	 printf("Please tap Transaction type: \n");
+     	  	 scanf(" %c",&type);
 		}
 	}
 return 0;

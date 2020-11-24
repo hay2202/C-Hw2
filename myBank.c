@@ -123,13 +123,15 @@ void I ()
 {
     int i=0;
     double rate=0;
+
+    printf("Enter the amount of money you want to rate:  \n");
+    scanf(" %lf", &rate);
+
     // run on all the account
     while (i<accountCounter)
     {
         if(arr[i][0]==1.0) // if the account is active
         {
-            printf("Enter the amount of money you want to rate:  \n");
-            scanf(" %lf", &rate);
             arr[i][1]=((arr[i][1]*rate)/100)+arr[i][1]; // add the rate to amount of account
             i++;
         }
