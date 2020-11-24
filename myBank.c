@@ -14,7 +14,7 @@ void O ()
     if (accountCounter<50)
     {
             printf("Enter the amount of money you want to deposit: \n");
-            scanf(" %lf ", &amount);
+            scanf(" %lf", &amount);
             arr[accountCounter][0] = 1.0; // if account is active ,1=on , 0=off;
             arr[accountCounter][1] = amount;// amount of money
             printf("Welcome! your account number is:  %d . \n", (accountCounter + 901));
@@ -55,7 +55,7 @@ void D(int account){
      if((account-901)<accountCounter) {
         if (arr[account-901][0] == 1.0) {
             printf("Enter the amount of money you want to deposit:  \n");
-            scanf(" %lf ", &amount);
+            scanf(" %lf", &amount);
             arr[account-901][1]= arr[account-901][1] + amount;
             printf("The new balance after deposit : %0.2lf . \n", arr[account-901][1]);
         }
@@ -77,7 +77,7 @@ void W (int account)
      if((account-901)<accountCounter) {
         if (arr[account - 901][0] == 1.0){
             printf("Enter the amount of money you want to withdraw: \n");
-            scanf(" %lf ", &amount);
+            scanf("%lf", &amount);
             if (arr[account-901][1]-amount>=0 ){ // if the balance >=0
                 arr[account-901][1]=arr[account-901][1]-amount;
                 printf("The balance after pull : %0.2lf \n",arr[account-901][1]);
@@ -129,7 +129,7 @@ void I ()
         if(arr[i][0]==1.0) // if the account is active
         {
             printf("Enter the amount of money you want to rate:  \n");
-            scanf(" %lf ", &rate);
+            scanf(" %lf", &rate);
             arr[i][1]=((arr[i][1]*rate)/100)+arr[i][1]; // add the rate to amount of account
             i++;
         }

@@ -16,7 +16,7 @@ while(flag){
 	{
 		case 'O':
 			O();
-			break;	
+			break;
 		case 'B':
                         printf("insert account number: ");
                         scanf("%d", &account);
@@ -27,7 +27,7 @@ while(flag){
                         scanf("%d", &account);
                         D(account);
                         break;
-                       
+
 		case 'W':
                         printf("insert account number: ");
                         scanf("%d", &account);
@@ -38,7 +38,7 @@ while(flag){
                         scanf("%d", &account);
                         C(account );
                         break;
-	
+
 	       	case 'I':
                         I();
                         break;
@@ -48,12 +48,15 @@ while(flag){
                         break;
 		case 'E':
                         E();
-			flag=false;
+                        printf("The program is over .\n");
+			            flag=false;
                         break;
 		}
-	printf("Please tap Transaction type: \n");
-        scanf("%c",&type);
+		if(flag != false){
+	    printf("Please tap Transaction type: \n");
+        scanf(" %c",&type);
+		}
 	}
 return 0;
-}		
+}
 
