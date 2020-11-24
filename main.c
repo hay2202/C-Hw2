@@ -11,29 +11,30 @@ printf("Welcome to our bank! Please tap Transaction type. \n");
 scanf("%c",&type);
 
 while(flag){
+
 	switch(type)
 	{
 		case 'O':
 			O();
-			break;
+			break;	
 		case 'B':
-                        printf("insert account number");
+                        printf("insert account number: ");
                         scanf("%d", &account);
                         B(account);
                         break;
 		case 'D':
-                        printf("insert account number");
+                        printf("insert account number: ");
                         scanf("%d", &account);
                         D(account);
                         break;
                        
 		case 'W':
-                        printf("insert account number");
+                        printf("insert account number: ");
                         scanf("%d", &account);
                         W(account);
                         break;
 		case 'C':
-			printf("insert account number");
+			printf("insert account number: ");
                         scanf("%d", &account);
                         C(account );
                         break;
@@ -50,7 +51,7 @@ while(flag){
 			flag=false;
                         break;
 		}
-	printf("Welcome to our bank! Please tap Transaction type. \n");
+	printf("Please tap Transaction type: \n");
         scanf("%c",&type);
 	}
 return 0;
