@@ -14,7 +14,8 @@ int main(){
         type=' ';
         if(flag == true)
         {
-            printf("Please tap Transaction type: \n");
+            printf("\n Please choose Transaction type: \n");
+	    printf(" O-open account \n B-balance \n D-deposit \n W-withdraw \n C-close account \n I-insert rate \n P-print actives account \n E-close & exit \n");
             scanf(" %c", &type);
             fflush(stdin);
         }
