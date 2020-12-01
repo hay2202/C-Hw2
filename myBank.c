@@ -214,7 +214,7 @@ void menu()
     printf(" W-Withdrawal\n");
     printf(" C-Close Account\n");
     printf(" I-Interest\n");
-    printf(" P-Print\n")
+    printf(" P-Print\n");
     printf(" E-Exit\n");
 }
 
