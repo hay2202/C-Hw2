@@ -8,4 +8,5 @@ void C ();
 void I ();
 void P ();
 void E ();
+void menu();
 

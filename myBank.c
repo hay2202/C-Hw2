@@ -205,6 +205,19 @@ void E()
     }
 }
 
+void menu()
+{
+    printf("\n Please choose a transaction type:\n");
+    printf(" O-Open Account\n");
+    printf(" B-Balance Inquiry\n");
+    printf(" D-Deposit\n");
+    printf(" W-Withdrawal\n");
+    printf(" C-Close Account\n");
+    printf(" I-Interest\n");
+    printf(" P-Print\n")
+    printf(" E-Exit\n");
+}
+
 
 
 
