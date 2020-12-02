@@ -85,7 +85,7 @@ void D(int account){
     }
     else
     {
-        printf("Invalid account number \n");
+        printf("Failed to read the account number \n");
     }
 }
 
