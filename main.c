@@ -15,7 +15,6 @@ int main(){
         {
             menu();
             scanf(" %c", &type);
-            fflush(stdin);
         }
 
         switch (type)

@@ -38,7 +38,7 @@ void B (int account)
 {
     // this is how you access an account because the account number is starting
     //from 901 and the aary contains only up to 50.
-    if((account-901)<accountCounter && account > 901) // if account is exists
+    if((account-901)<accountCounter && account > 900) // if account is exists
     {
         if(arr[account-901][0]==1.0) // if account is active
         {
@@ -57,20 +57,24 @@ void B (int account)
 
 //deposit
 void D(int account){
-    if((account-901)<accountCounter)
+    if((account-901)<accountCounter && account > 900)
     {
         if (arr[account-901][0] == 1.0)
         {
-            printf("Enter the amount of money you want to deposit:  \n");
-            if (scanf("%lf", &amount) == 1) 
-            {
-                arr[account - 901][1] = arr[account - 901][1] + amount;
-                printf("The new balance after deposit : %0.2lf . \n", arr[account - 901][1]);
-            }
+            printf("Enter the amount of money you want to deposit:  ");
+            if (scanf("%lf", &amount) == 1 ) 
+                  if (amount > 0 )
+                 {
+                       arr[account - 901][1] = arr[account - 901][1] + amount;
+                      printf("The new balance after deposit : %0.2lf . \n", arr[account - 901][1]);
+                 }
+                else 
+                {
+                    printf("Cannot deposit a negative amount.\n ");
+                }
             else
             {
                 printf("Incorrect tapping of money, failed to open an account.\n");
-                fflush(stdin);
             }
         }
         else
@@ -81,14 +85,14 @@ void D(int account){
     }
     else
     {
-        printf("The account does not exist .\n");
+        printf("Invalid account number \n");
     }
 }
 
 //withdraw
 void W (int account)
 {
-    if((account-901)<accountCounter) {
+    if((account-901)<accountCounter && account > 900) {
         if (arr[account - 901][0] == 1.0){
             printf("Enter the amount of money you want to withdraw: \n");
             if( scanf("%lf", &amount) == 1)
@@ -102,7 +106,6 @@ void W (int account)
                 }
             }
             else {
-                fflush(stdin);
                 printf("Incorrect tapping of money, failed to open an account.\n");
             }
         }
@@ -114,14 +117,14 @@ void W (int account)
     }
     else
     {
-        printf("The account does not exist .\n");
+       printf("Invalid account number \n");
     }
 }
 
 //close account
 void C (int account)
 {
-    if((account-901)<accountCounter)
+    if((account-901)<accountCounter && account > 900)
     {
         if(arr[account-901][0]==1.0){
             arr[account-901][0]=0.0;
@@ -134,7 +137,7 @@ void C (int account)
     }
     else
     {
-        printf("The account does not exist .\n");
+        printf("Invalid account number \n");
     }
 }
 
@@ -161,7 +164,7 @@ void I ()
     }
     else
     {
-        //fflush(stdin);
+      
         printf(" Failed to read the interest rate\n");
     }
 
