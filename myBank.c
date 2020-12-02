@@ -13,18 +13,17 @@ void O ()
     double amount1;
     if (accountCounter<50)
     {
-        printf("Enter the amount of money you want to deposit: \n");
-        scanf(" %lf", &amount1);
-        fflush(stdin);
-        if (amount1)
+        printf("Please enter amount for deposit: ");
+       int x = scanf(" %lf", &amount1);
+        if (x>0 && amount1>0) 
         {
             arr[accountCounter][0] = 1.0; // if account is active ,1=on , 0=off;
             arr[accountCounter][1] = amount1;// amount of money
-            printf("Welcome! your account number is:  %d . \n", (accountCounter + 901));
+            printf("New account number is:  %d . \n", (accountCounter + 901));
             accountCounter++;
         }
         else
-            printf("Incorrect tapping .\n");
+            printf("Failed to read the amount \n");
     }
     else
     {
@@ -39,21 +38,20 @@ void B (int account)
 {
     // this is how you access an account because the account number is starting
     //from 901 and the aary contains only up to 50.
-    if((account-901)<accountCounter) // if account is exists
+    if((account-901)<accountCounter && account > 901) // if account is exists
     {
         if(arr[account-901][0]==1.0) // if account is active
         {
-            printf("The balance in the account is : %0.2lf . \n" ,arr[account-901][1]);
+            printf("The balance of account number: %d is: %0.2lf . \n" ,account,arr[account-901][1]);
         }
         else
         {
-            printf("The account is inactive so it is not "
-                   "possible to print a balance . \n");
+            printf("Failed to read the account number \n");
         }
     }
     else
     {
-        printf("The account does not exist .\n");
+        printf("Invalid account number .\n");
     }
 }
 
@@ -64,7 +62,7 @@ void D(int account){
         if (arr[account-901][0] == 1.0)
         {
             printf("Enter the amount of money you want to deposit:  \n");
-            if (scanf("%lf", &amount) == 1)
+            if (scanf("%lf", &amount) == 1) 
             {
                 arr[account - 901][1] = arr[account - 901][1] + amount;
                 printf("The new balance after deposit : %0.2lf . \n", arr[account - 901][1]);
@@ -146,7 +144,7 @@ void I ()
     int i=0;
     double rate=0;
 
-    printf("Enter the amount of money you want to rate:  \n");
+    printf("Please enter interest rate: ");
     if( scanf(" %lf", &rate)==1)
     {
 
@@ -163,8 +161,8 @@ void I ()
     }
     else
     {
-        fflush(stdin);
-        printf("Incorrect tapping of rate, can not perform the operation.\n");
+        //fflush(stdin);
+        printf(" Failed to read the interest rate\n");
     }
 
 }
@@ -177,7 +175,7 @@ void P()
     {
         if(arr[i][0]==1.0)
         {
-            printf("Account number : %d . Balance: %0.2lf \n" , (i+901),arr[i][1]);
+            printf("The balance of account number %d is: %0.2lf \n" , (i+901),arr[i][1]);
             i++;
         }
         else
@@ -214,7 +212,7 @@ void menu()
     printf(" W-Withdrawal\n");
     printf(" C-Close Account\n");
     printf(" I-Interest\n");
-    printf(" P-Print\n")
+    printf(" P-Print\n");
     printf(" E-Exit\n");
 }
 
